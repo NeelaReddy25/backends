@@ -84,21 +84,21 @@ pipeline {
                 }
             }
         }
-    stage('Deploy'){
-            // when{
-            //     expression{
-            //         params.deploy
-            //     }
-            // }
-            steps{
-                script{
-                    def params = [
-                        string(name: 'appVersion', value: "${appVersion}")
-                    ]
-                    build job: 'backends-deploy', parameters: params, wait: false
-                }
-            }
-        }
+    // stage('Deploy'){
+    //         // when{
+    //         //     expression{
+    //         //         params.deploy
+    //         //     }
+    //         // }
+    //         steps{
+    //             script{
+    //                 def params = [
+    //                     string(name: 'appVersion', value: "${appVersion}")
+    //                 ]
+    //                 build job: 'backends-deploy', parameters: params, wait: false
+    //             }
+    //         }
+    //     }
     }
     post {
         always {
